@@ -1,8 +1,18 @@
 let express=require('express');
-let hrroutes=require('./routes/hr_routes')
+
+let mongoose=require('mongoose')
+let hrroutes=require('./routes/hr_routes');
+let emproutes=require('./routes/emp_routes');
 let app=express();
+mongoose.connect("mongodb://localhost:27017/hrmanagement").then(
+    ()=>console.log("Database connected successfuly")
+).catch((err)=>console.log(err));
+
+app.use(express.json());
 
 app.use("/api/hr",hrroutes);
+app.use("/api/emp",emproutes);
+
 
 app.listen(3000,()=>{
     console.log("server running on port 3000")

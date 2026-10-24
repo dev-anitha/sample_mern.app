@@ -3,8 +3,8 @@
     height: 100%;
     background-color:black;
 }
-a{
-    color:blue;
+.header a{
+    color:white;
     text-decoration: none;
     padding:5px;
 }
